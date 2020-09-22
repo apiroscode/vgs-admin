@@ -1,12 +1,6 @@
 import React from "react";
 
-import {
-  Card,
-  CardContent,
-  CardMedia,
-  makeStyles,
-  Typography,
-} from "@material-ui/core";
+import { Card, CardContent, CardMedia, makeStyles, Typography } from "@material-ui/core";
 
 import { useDocumentDataOnce } from "react-firebase-hooks/firestore";
 
@@ -40,15 +34,10 @@ const Brand = ({ brandId }) => {
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
   const classes = useStyles();
-  const image = product?.images
-    ? product.images[0]
-    : "https://via.placeholder.com/200x200";
+  const image = product?.images ? product.images[0] : "https://via.placeholder.com/200x200";
 
   return (
-    <Card
-      className={classes.container}
-      onClick={() => navigate(`/products/${product.id}`)}
-    >
+    <Card className={classes.container} onClick={() => navigate(`/products/${product.id}`)}>
       <CardMedia image={image} title="" className={classes.media} />
       <CardContent className={classes.infoContainer}>
         <Brand brandId={product.brand} />
@@ -56,7 +45,7 @@ const ProductCard = ({ product }) => {
           {product.name}
         </Typography>
         <Typography variant="h6" color="secondary">
-          $ {product.price}
+          Rp {product.price.toLocaleString()}
         </Typography>
       </CardContent>
     </Card>

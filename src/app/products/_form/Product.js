@@ -85,12 +85,8 @@ const Product = (props) => {
         type="number"
         fullWidth
         variant="outlined"
-        inputProps={{
-          min: 0,
-          step: 0.01,
-        }}
         InputProps={{
-          startAdornment: <InputAdornment position="start">$</InputAdornment>,
+          startAdornment: <InputAdornment position="start">Rp </InputAdornment>,
         }}
         error={!!errors.price}
         helperText={errors.price?.message}
@@ -103,12 +99,8 @@ const Product = (props) => {
         type="number"
         fullWidth
         variant="outlined"
-        inputProps={{
-          min: 0,
-          step: 0.01,
-        }}
         InputProps={{
-          startAdornment: <InputAdornment position="start">$</InputAdornment>,
+          startAdornment: <InputAdornment position="start">RP </InputAdornment>,
         }}
         error={!!errors.crossOutPrice}
         helperText={errors.crossOutPrice?.message}
